@@ -7,6 +7,10 @@ class ExercisesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Sort the list alphabetically by the 'name' property.
+    final sortedExercises = List<Map<String, String>>.from(bodyweightExercises)
+      ..sort((a, b) => a['name']!.compareTo(b['name']!));
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Exercises'),
@@ -16,28 +20,28 @@ class ExercisesPage extends StatelessWidget {
             // list of exercises and their name and image in a listview.builder + listtile,
             // with a leading image and a title
             ListView.builder(
-          itemCount: barbellExercises.length,
+          itemCount: sortedExercises.length,
           itemBuilder: (context, index) {
             return ListTile(
               onTap: () {
                 Navigator.pushNamed(
                   context,
                   '/exercise',
-                  arguments: barbellExercises[index],
+                  arguments: sortedExercises[index],
                 );
               },
               //leading should use the First Letter of every word in the name of the exercise
               leading: CircleAvatar(
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 child: Text(
-                  barbellExercises[index]['name']![0],
+                  sortedExercises[index]['name']![0],
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              title: Text(barbellExercises[index]['name']!),
+              title: Text(sortedExercises[index]['name']!),
             );
           },
         ),
