@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_tracker/profile_header.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -17,8 +18,13 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('Profile Page'),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: ListView(
+          children: const [
+            ProfileHeader(),
+          ],
+        ),
       ),
     );
   }

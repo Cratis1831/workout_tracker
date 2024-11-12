@@ -13,7 +13,7 @@ class ExercisesPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exercises'),
+        title: Text('Exercises (${sortedExercises.length})'),
       ),
       body: Center(
         child:
