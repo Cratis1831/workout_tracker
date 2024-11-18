@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:workout_tracker/pages/home.dart';
 
@@ -7,7 +8,11 @@ void main() async {
     url: 'https://xyzcompany.supabase.co',
     anonKey: 'public-anon-key',
   );
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

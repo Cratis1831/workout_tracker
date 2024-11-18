@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExercisesPage extends StatelessWidget {
@@ -6,10 +7,11 @@ class ExercisesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Exercises'),
-      ),
-      body: const Text('Exercises'),
-    );
+        appBar: AppBar(
+          title: const Text('Exercises'),
+        ),
+        body: const CupertinoTextField(
+          placeholder: 'Search exercises',
+        ));
   }
 }
