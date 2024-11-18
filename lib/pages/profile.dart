@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workout_tracker/profile_header.dart';
+import 'package:workout_tracker/widgets/profile_header.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

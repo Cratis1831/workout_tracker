@@ -9,9 +9,7 @@ class CreateWorkoutPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Create Workout'),
       ),
-      body: const Center(
-        child: Text('Create Workout Page'),
-      ),
+      body: const Text('Create Workout'),
     );
   }
 }
